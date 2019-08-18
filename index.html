@@ -29,7 +29,8 @@
             $(function(){
                 $("input").keydown(function(key){
                     if(key.keyCode === 13 ){
-                        socket.emit('msg',sessionStorage.getItem('name1') +":" + $(this).val())
+                        socket.emit('msg',sessionStorage.getItem('name1') +": " + $(this).val())
+                        $('#msgs').append(sessionStorage.getItem('name1')+': '+ $(this).val()+'<br>')
                         $(this).val('');
                     }
                     console.log(key.keyCode)
@@ -38,7 +39,6 @@
             function backToName(){
                 window.location.replace('/nome')
             }
-
         </script>
     </body>
 
